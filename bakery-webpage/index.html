@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bakery Promo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sweet Treats Bakery</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#slideshow">Featured</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="slideshow">
+        <h2>Featured Products</h2>
+        <div class="slideshow">
+            <div class="slide"><img src="https://via.placeholder.com/600x200/FFC107/000?text=Cakes" alt="Cakes"></div>
+            <div class="slide"><img src="https://via.placeholder.com/600x200/F48FB1/000?text=Pastries" alt="Pastries"></div>
+            <div class="slide"><img src="https://via.placeholder.com/600x200/81D4FA/000?text=Bread" alt="Bread"></div>
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We bake everything fresh daily with love and the best ingredients. Visit our bakery or order online!</p>
+    </section>
+    <footer>
+        <p>&copy; 2025 Sweet Treats Bakery</p>
+    </footer>
+    <script>
+        // Simple JS to cycle the product images, always shows something!
+        window.onload = function() {
+            let slides = document.querySelectorAll('.slide');
+            let idx = 0;
+            function showSlide(i) {
+                slides.forEach((s, j) => s.style.display = (i === j ? "block" : "none"));
+            }
+            showSlide(idx);
+            setInterval(() => {
+                idx = (idx + 1) % slides.length;
+                showSlide(idx);
+            }, 2000);
+        };
+    </script>
+</body>
+</html>
